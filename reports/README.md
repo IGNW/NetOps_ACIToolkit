@@ -12,8 +12,7 @@ python3 aci-report-logical.py -all -u https://sandboxapicdc.cisco.com -l admin -
 ## Show Security Groups:
 python3 aci-report-security-audit.py -u https://sandboxapicdc.cisco.com -l admin -p ciscopsdt
 
-
-## Show Report:
+## Show Switch Report:
 python3 aci-report-switch.py -u https://sandboxapicdc.cisco.com -l admin -p ciscopsdt
 
 ## GUI Version:
