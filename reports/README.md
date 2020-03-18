@@ -1,38 +1,38 @@
-#ACI Toolkit Demo Script - for ACI Always on Sandbox 
+# ACI Toolkit Demo Script - for ACI Always on Sandbox 
 
-##Show Status
+## Show Status
 cd to reports directory
 
-##Show Tenants:
+## Show Tenants:
 python3 aci-report-logical.py -u https://sandboxapicdc.cisco.com -l admin -p ciscopsdt
 
-##Show All:
+## Show All:
 python3 aci-report-logical.py -all -u https://sandboxapicdc.cisco.com -l admin -p ciscopsdt
 
-##Show Security Groups:
+## Show Security Groups:
 python3 aci-report-security-audit.py -u https://sandboxapicdc.cisco.com -l admin -p ciscopsdt
 
 
-##Show Report:
+## Show Report:
 python3 aci-report-switch.py -u https://sandboxapicdc.cisco.com -l admin -p ciscopsdt
 
-##GUI Version:
+## GUI Version:
 python3 aciREportGui.py
 
 
-#Config APIC
+# Config APIC
 cd to cli directory
 
-##Show current setup:
+## Show current setup:
 python3 acitoolkitcli.py -l admin -p ciscopsdt -u https://sandboxapicdc.cisco.com -t show_cli.txt
 
-##Config APIC:
+## Config APIC:
 python3 acitoolkitcli.py -l admin -p ciscopsdt -u https://sandboxapicdc.cisco.com -t config_cli.txt
 
-##Reshow Conifg:
+## Reshow Conifg:
 python3 acitoolkitcli.py -l admin -p ciscopsdt -u https://sandboxapicdc.cisco.com -t show_cli.txt
 
-##Return to Reports and show them again
+## Return to Reports and show them again
 
-##Return to CLI and undo configs
+## Return to CLI and undo configs
 python3 acitoolkitcli.py -l admin -p ciscopsdt -u https://sandboxapicdc.cisco.com -t undo_cli.txt
