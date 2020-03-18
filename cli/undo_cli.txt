@@ -1,0 +1,64 @@
+configure
+switchto solar_meter
+no app solar_meter_east
+no app solar_meter_west
+no app appfinance
+no app apphr
+no app appsales
+no app appengineer
+no app appmkting
+no app apppublic
+no contract web2mw
+no contract web2mw
+no contract mw2db
+no contract mw2web
+no context solar_meter
+no epg db_east
+no epg mw_east
+no epg web_east
+no epg db_west
+no epg mw_west
+no epg web_west
+no epg epgfinance
+no epg epghr
+no epg epgsales
+no epg epgengineer
+no epg mkting
+no epg public
+no bridgedomain east
+no bridgedomain west
+no bridgedomain bdfinance
+no bridgedomain bdhr
+no bridgedomain bdsales
+no bridgedomain bdengineer
+no bridgedomain mkting
+no bridgedomain public
+exit
+switchto default
+configure
+no tenant solar_meter
+exit
+configure
+no interface eth 1/101/1/28
+no interface eth 1/101/1/27
+no interface eth 1/101/1/26
+no interface eth 1/101/1/25
+no interface eth 1/101/1/24
+no interface eth 1/101/1/23
+no interface eth 1/101/1/22
+no interface eth 1/101/1/21
+no interface eth 1/101/1/38
+no interface eth 1/101/1/37
+no interface eth 1/101/1/36
+no interface eth 1/101/1/35
+no interface eth 1/101/1/34
+no interface eth 1/101/1/33
+no interface eth 1/101/1/32
+no interface eth 1/101/1/31
+no interface eth 1/101/1/46
+no interface eth 1/101/1/45
+no interface eth 1/101/1/44
+no interface eth 1/101/1/43
+no interface eth 1/101/1/42
+exit
+exit
