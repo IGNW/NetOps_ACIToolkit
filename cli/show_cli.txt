@@ -1,0 +1,8 @@
+show tenant
+show bridgedomain
+show app
+show epg
+show interface
+show context
+show infradomains
+exit
