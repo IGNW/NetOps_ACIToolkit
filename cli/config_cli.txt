@@ -1,0 +1,132 @@
+configure
+tenant solar_meter
+exit
+switchto solar_meter
+configure
+context solar_meter
+allowall
+exit
+contract db2mw
+scope tenant
+100 permit ethertype ip 
+exit
+contract web2mw
+scope tenant
+100 permit ethertype ip 
+exit
+bridgedomain east
+context solar_meter
+ip address 10.20.13.0/24
+exit
+bridgedomain west
+context solar_meter
+ip address 10.20.14.0/24
+exit
+app solar_meter_east
+epg db_east
+bridgedomain east
+provide db2mw
+consume mw2db
+exit
+epg mw_east
+bridgedomain east
+provide mw2db
+provide mw2web
+consume db2mw
+consume web2mw
+exit
+epg web_east
+bridgedomain east
+provide web2mw
+consume mw2web
+exit
+exit
+app solar_meter_west
+epg db_west
+bridgedomain west
+provide db2mw
+consume mw2db
+exit
+epg mw_west
+bridgedomain west
+provide mw2db
+provide mw2web
+consume db2mw
+consume web2mw
+exit
+epg web_west
+bridgedomain west
+provide web2mw
+consume mw2web
+exit
+exit
+interface eth 1/101/1/26
+epg solar_meter_east/db_east vlan 7443
+exit
+interface eth 1/101/1/27
+epg solar_meter_east/db_east vlan 7443
+exit
+interface eth 1/101/1/28
+epg solar_meter_east/db_east vlan 7443
+exit
+interface eth 1/101/1/24
+epg solar_meter_east/mw_east vlan 7443
+exit
+interface eth 1/101/1/25
+epg solar_meter_east/mw_east vlan 7443
+exit
+interface eth 1/101/1/21
+epg solar_meter_east/web_east vlan 7443
+exit
+interface eth 1/101/1/22
+epg solar_meter_east/web_east vlan 7443
+exit
+interface eth 1/101/1/23
+epg solar_meter_east/web_east vlan 7443
+exit
+interface eth 1/101/1/36
+epg solar_meter_west/db_west vlan 7444
+exit
+interface eth 1/101/1/37
+epg solar_meter_west/db_west vlan 7444
+exit
+interface eth 1/101/1/38
+epg solar_meter_west/db_west vlan 7444
+exit
+interface eth 1/101/1/34
+epg solar_meter_west/mw_west vlan 7444
+exit
+interface eth 1/101/1/35
+epg solar_meter_west/mw_west vlan 7444
+exit
+interface eth 1/101/1/31
+epg solar_meter_west/web_west vlan 7444
+exit
+interface eth 1/101/1/32
+epg solar_meter_west/web_west vlan 7444
+exit
+interface eth 1/101/1/33
+epg solar_meter_west/web_west vlan 7444
+exit
+bridgedomain corporate
+context solar_meter
+ip address 10.20.12.3/24
+exit
+app corporate
+epg finance
+bridgedomain corporate
+exit
+epg hr
+bridgedomain corporate
+exit
+epg sales
+bridgedomain corporate
+exit
+epg engineer
+bridgedomain corporate
+exit
+epg marketing
+bridgedomain corporate
+exit
+exit
+exit
